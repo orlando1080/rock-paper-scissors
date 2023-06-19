@@ -1,9 +1,4 @@
-let getComputerChoice = () => {
-    let computerChoices = ['rock', 'paper', 'scissors'];
-    return computerChoices[Math.floor(Math.random() * computerChoices.length)];
-};
-
-function playRound(playerSelection, computerSelection) {
+let playRound = (playerSelection, computerSelection) => {
     
     if (playerSelection === computerSelection) {
         console.log('The result is a draw!');
@@ -11,26 +6,38 @@ function playRound(playerSelection, computerSelection) {
     } 
     
     if (playerSelection === 'rock') {
-        console.log(computerSelection === 'scissors' ? 'You win! Rock beats Scissors.' : 'You Lose! Paper beats Rock.');
+        console.log(computerSelection === 'scissors' ? 'You Win! Rock beats Scissors.' : 'You Lose! Paper beats Rock.');
         return computerSelection === 'scissors' ? 1 : 0;
     }
             
-     if (playerSelection === 'paper')
-        if (computerSelection === 'rock') {
-            return 'You win! Paper beats Rock.';
-            } else {
-                return 'You Lose! Scissors beats Paper.';
-            }
+     if (playerSelection === 'paper') {
+        console.log(computerSelection === 'rock' ? 'You Win! Paper beats Rock.' : 'You Lose! Scissors beats Paper.');
+        return computerSelection === 'rock' ? 1 : 0;
+    }
       
-       if (playerSelection === 'scissors')
-        if (computerSelection === 'paper') {
-            return 'You win! Scissors beats Paper.';
-            } else {
-                return 'You Lose! Rock beats Scissors.';
-            }
-}
+    if (playerSelection === 'scissors') {
+        console.log(computerSelection === 'paper' ? 'You Win! Scissors beats Paper.' : 'You Lose! Rock beats Scissors.')
+        return computerSelection === 'paper' ? 1 : 0;
+    }
 
-function game() {
+};
+
+let declareWinner = (playerScore, computerScore) => {
+    if (playerScore > computerScore) {
+        console.log('You win!');
+    } else if (playerScore < computerScore) {
+        console.log('Computer wins!');
+    } else {
+        console.log('The overall result is a Draw!');
+    }
+};
+
+let getComputerChoice = () => {
+    let computerChoices = ['rock', 'paper', 'scissors'];
+    return computerChoices[Math.floor(Math.random() * computerChoices.length)];
+};
+
+let runGame = () => {
     let playerScore = 0,
     computerScore = 0,
     draws = 0;
@@ -48,14 +55,7 @@ function game() {
             draws += 1;
         }
     }
+    declareWinner(playerScore, computerScore)
+};
 
-    if (playerScore > computerScore) {
-        console.log('You win!');
-    } else if (playerScore < computerScore) {
-        console.log('Computer wins!');
-    } else {
-        console.log('Draw!');
-    }
-}
-
-game()
+runGame()

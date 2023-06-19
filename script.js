@@ -16,7 +16,7 @@ let playRound = (playerSelection, computerSelection) => {
     }
       
     if (playerSelection === 'scissors') {
-        console.log(computerSelection === 'paper' ? 'You Win! Scissors beats Paper.' : 'You Lose! Rock beats Scissors.')
+        console.log(computerSelection === 'paper' ? 'You Win! Scissors beats Paper.' : 'You Lose! Rock beats Scissors.');
         return computerSelection === 'paper' ? 1 : 0;
     }
 

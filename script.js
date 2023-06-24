@@ -41,7 +41,10 @@ let runGame = () => {
     draws = 0;
     
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Pick Rock, Paper or scissors:').toLowerCase(),
+        let playerSelection;
+        do {
+            playerSelection = prompt('Pick Rock, Paper or scissors:').toLowerCase()
+        } while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors');
         result = playRound(playerSelection, getComputerChoice());
         switch(result) {
             case 1:

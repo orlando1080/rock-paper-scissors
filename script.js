@@ -49,33 +49,6 @@ let getComputerChoice = () => {
     return computerChoices[Math.floor(Math.random() * computerChoices.length)];
 };
 
-// let runGame = () => {
-//     let playerScore = 0,
-//     computerScore = 0,
-//     draws = 0;
-    
-//     for (let i = 0; i < 5; i++) {
-//         let playerSelection;
-//         do {
-//             playerSelection = prompt('Pick Rock, Paper or scissors:').toLowerCase()
-//         } while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors');
-//         result = playRound(playerSelection, getComputerChoice());
-        // switch(result) {
-        //     case 1:
-        //         playerScore += 1;
-        //         continue;
-        //     case 0:
-        //         computerScore += 1;
-        //         continue;
-        //     default:
-        //         draws += 1;
-        // }
-//     }
-//     declareWinner(playerScore, computerScore)
-// };
-
-// runGame()
-
 let playGame = () => {
     let playerScore = 0,
     computerScore = 0,
